@@ -1,0 +1,15 @@
+Cryptage unicode-algorythim with math
+each unique letter get a number:
+-first step: find all unique letters
+-second step: assign a value between 0 and len(of the list of unique letterts) -1
+
+
+each letter in the world get a new value base on its letter(ex: a) and its position in the list
+-Step 1: find the unique letter value corresponding to this letter
+-Step 2: add/substract/divise/multiplicate the position of this letter in the list with the step 1
+
+
+
+Suffle with lenght % by the minimun divisor possible
+-Step 1: find the min divisor possible
+-Step 2: use it to make the order random 
