@@ -1,5 +1,5 @@
 from random import *
-import binascii
+
 def format_hex(hex_to_format):
     temp = list(hex_to_format)
     del temp[0:2]
@@ -9,13 +9,12 @@ def format_hex(hex_to_format):
         a+= elt
     return a
 
-def generate_key():
+def generate_key(text_to_crypher):
     def generate_hexa():
         return hex(randint(0,255))
     key = format_hex(generate_hexa())
     for i in range(randint(5,10)):
         key += format_hex(generate_hexa())
-    print("key:",key)
     return key
 
 def crypt(to_crypt,key):
@@ -36,7 +35,6 @@ def crypt(to_crypt,key):
             else:
                 crypted_message += chr(add(i,to_crypt[index_in_the_text]))      
                 index_in_the_text += 1
-    print("crypted message:",crypted_message)
     return crypted_message
 
 
@@ -63,11 +61,5 @@ def uncrypt(message,key):
                 uncrypted_message += chr(reduce(i,message[index_in_the_text]))      
                 index_in_the_text += 1
                 
-    print("uncrypted message:",uncrypted_message)
     return uncrypted_message
 
-
-
-little_key = generate_key()
-temp = crypt("my message",little_key)
-uncrypt(temp,little_key)
