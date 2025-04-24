@@ -19,5 +19,3 @@ def unormalized(text,element_to_detect):
                     
             
 
-test = [20,30,60]      
-print(unormalized(normalised_key(test,534),534))

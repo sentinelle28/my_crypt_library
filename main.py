@@ -5,9 +5,14 @@ import cryptage.variation_cypher as CVC
 import cryptage.discovered as CD
 import cryptage.fake_and_true_cryptage as FAT
 import cryptage.cryptage_test as CT
+import cryptage.shuffle_cryptage as SC
 
 #for all module
-dico_crypt:dict = {"CVC":CVC,"CD":CD,"FAT":FAT,"CT":CT}
+dico_crypt:dict = {"CVC":CVC,
+                   "CD":CD,
+                   "FAT":FAT,
+                   "CT":CT,
+                   "SC":SC}
 
 
 #function
