@@ -3,9 +3,11 @@ from tkinter.ttk import *
 
 import cryptage.variation_cypher as CVC
 import cryptage.discovered as CD
+import cryptage.fake_and_true_cryptage as FAT
+import cryptage.cryptage_test as CT
 
 #for all module
-dico_crypt:dict = {"CVC":CVC,"CD":CD}
+dico_crypt:dict = {"CVC":CVC,"CD":CD,"FAT":FAT,"CT":CT}
 
 
 #function
@@ -34,7 +36,7 @@ def generate_key()->None:
         key_input.delete(1.0,END)
         key_input.insert(END,dico_crypt[module_to_use].generate_key(get_text()))
 
-def  crypt()->None:
+def crypt()->None:
     module_to_use = crypt_drop_down.get()
     if can_do(module_to_use):
         text:str = dico_crypt[module_to_use].crypt(get_text(),get_key())
