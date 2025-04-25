@@ -4,8 +4,8 @@ import random
 
 def Generate(list_to_cypher:str):
     element_to_put:int =  0
-    list_of_letter:list = []#:list[str]
-    key:list = []#list[int]
+    list_of_letter:list[str] = []#:list[str]
+    key:list[int] = []#list[int]
     for letter in list_to_cypher:
         if not letter in list_of_letter:
             list_of_letter.append(letter)
@@ -18,8 +18,8 @@ def Generate(list_to_cypher:str):
                 break
     
     
-    referencement = random.randint(2,len(key)*2)
-    it = 0
+    referencement:int = random.randint(2,len(key)*2)
+    it:int = 0
     while True:
         it += 1
         if not it in key:
@@ -34,10 +34,9 @@ def Cypher(list_to_cypher:list,key:list,list_of_letter:list,referencement:int):
         list_cyphered.append(search)
     return list_cyphered
         
-def Decypher(list_to_decypher:list,key:list,list_of_letter:list,referencement:int):
-    list_decyphered = []
+def Decypher(list_to_decypher:list,key:list,list_of_letter:list,referencement:int)->list[str]:
+    list_decyphered:list[str] = []
     for i in range(len(list_to_decypher)):
-        print(list_to_decypher[i])
         search = list_to_decypher[i] - (referencement + (i + 1))
         list_decyphered.append(list_of_letter[key.index(search)])
     return list_decyphered
@@ -133,14 +132,14 @@ while True:
 def extract_key(text:str,element_to_put:str):        
     return text.split(str(element_to_put)) 
 
-key_1 = unormalized("13/5/15/20/8/11/9/6/1/4/23/10/18/22/16/24/7/3/19/17/14/2/12/","/") #list[int]
-key_2 = extract_key("y/o/u/ /s/c/e/f/l/n/r/p/t/h/i/m/a/g/k/:/I/b/w/","/") #list[str]
-key_3 = 43 #int
-key_4 = 18 #int
+key_1:list[int] = unormalized("13/5/15/20/8/11/9/6/1/4/23/10/18/22/16/24/7/3/19/17/14/2/12/","/") #list[int]
+key_2:list[str] = extract_key("y/o/u/ /s/c/e/f/l/n/r/p/t/h/i/m/a/g/k/:/I/b/w/","/") #list[str]
+key_3:int = 43 #int
+key_4:int = 18 #int
 
 #message = "258608778168818081808242820481308154821082888391819887682008378826481618360830083648297819682908330874489684958408849083608407826687028120845182108430848487658460851781104858881100811738572831889728121081064862781392810628126081464824881134813448156087268938812248207877084978728116881110875088368770814828869811208145881312814948159681870818068870896883568198089108193281023818881140896081067849089908110087078153081751814568315810608224782268810908121081887811208259981254820708812822238259681785825208278381342861581240813758239483818192081548811708131081452829268281482430828568287781380823638308083243832668314685768232081460816178296817888150081661824328306082310832558171682669815808174983840828988340283912865682970834868400881848830428187081197830968207684002817508193682301835608214883780818108200281830855285558186082244856482079824708191082112811588582835108274482758819808" 
-message = "1501877182418521884181351864181021821618304181801842188818322182401822518182182971833618464184801893182881856118306181751839618481183041811718401841182941860218308184051859818658184321863718300182551872818"
-message_1 = unormalized(message,str(key_4)) #list[int] 1/4
+message:str = "1501877182418521884181351864181021821618304181801842188818322182401822518182182971833618464184801893182881856118306181751839618481183041811718401841182941860218308184051859818658184321863718300182551872818"
+message_1:list[int] = unormalized(message,str(key_4)) #list[int] 1/4
 print(message_1)
-message_2 = Decypher(message_1,key_1,key_2,key_3) #4/4
+message_2:list[str] = Decypher(message_1,key_1,key_2,key_3) #4/4
 print(message_2)

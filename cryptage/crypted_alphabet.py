@@ -715,6 +715,5 @@ def Force_uncrypt(list_to_uncrypt):
 
 
 Generate_key_alphabet()          
-Crypt_alphabet_code(key_1,key_2,"moimoi")
-
+Crypt_alphabet_code(key_1,key_2,"demonstopnememangepas")
 Force_uncrypt(var_crypted)
