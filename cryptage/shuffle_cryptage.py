@@ -12,7 +12,7 @@ def Generate(input:str)->list[int]:
     key:list[int] = []
     for i in range(len(input)):
         while len(key) - 1 !=  i:
-            r = random.randint(0,len(input) - 1)
+            r:int = random.randint(0,len(input) - 1)
             if not r in key:
                 key.append(r)
     return key
